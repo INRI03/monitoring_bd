@@ -29,3 +29,21 @@ where xact_start is not null
 
 ![02](https://github.com/INRI03/monitoring_bd/blob/main/02.png)
 ![03](https://github.com/INRI03/monitoring_bd/blob/main/03.png)
+
+### 5. Определить ТОП-1 самых часто запускаемый запрос.
+
+Пункты выполнения задачи:
+1. В файле конфигурации в строке shared_preload_libraries (которую само собой нужно раскомментировать) прописать 'pg_stat_statements'.
+2. Перезапустить СУБД.
+3. Выполнить команду "CREATE EXTENSION pg_stat_statements".
+4. Выполнить команду
+	```sql
+  select query
+ 	from pg_stat_statements
+ 	where calls = (select max(calls)
+ 	from pg_stat_statements)
+  ```
+  
+  Подзапрос использую потому, что самых часто запускаемых запросов может быть больше чем один. А в случае с подзапросом я получаю все запросы с наибольшим количеством запусков.
+  
+  ![04](https://github.com/INRI03/monitoring_bd/blob/main/04.png)
