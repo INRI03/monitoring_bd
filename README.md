@@ -21,4 +21,11 @@ where xact_start is not null
 
 Время начала сессии указано, состояние - active, тип сессии - client backend.
 
-![pg_stat_acivity](
+![pg_stat_acivity](https://github.com/INRI03/monitoring_bd/blob/main/01.png)
+
+### 4. Во 2-ом терминале подключения к БД, выполнить команду отключения сеанса 1-го терминала.
+
+Следует воспользоваться командой pg_terminate_backend, поскольку в задании нужно отключить сеанс, а не выполнение какой-то команды.
+
+![02](https://github.com/INRI03/monitoring_bd/blob/main/02.png)
+![03](https://github.com/INRI03/monitoring_bd/blob/main/03.png)
