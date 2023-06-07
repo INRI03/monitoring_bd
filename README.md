@@ -38,7 +38,7 @@ where xact_start is not null
 3. Выполнить команду "CREATE EXTENSION pg_stat_statements".
 4. Выполнить команду
 ```sql
-  select query
+ select query
  from pg_stat_statements
  where calls = (select max(calls)
  from pg_stat_statements)
