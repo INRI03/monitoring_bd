@@ -37,13 +37,13 @@ where xact_start is not null
 2. Перезапустить СУБД.
 3. Выполнить команду "CREATE EXTENSION pg_stat_statements".
 4. Выполнить команду
-	```sql
+```sql
   select query
- 	from pg_stat_statements
- 	where calls = (select max(calls)
- 	from pg_stat_statements)
-  ```
+ from pg_stat_statements
+ where calls = (select max(calls)
+ from pg_stat_statements)
+ ```
   
-  Подзапрос использую потому, что самых часто запускаемых запросов может быть больше чем один. А в случае с подзапросом я получаю все запросы с наибольшим количеством запусков.
+ Подзапрос использую потому, что самых часто запускаемых запросов может быть больше чем один. А в случае с подзапросом я получаю все запросы с наибольшим количеством запусков.
   
-  ![04](https://github.com/INRI03/monitoring_bd/blob/main/04.png)
+ ![04](https://github.com/INRI03/monitoring_bd/blob/main/04.png)
