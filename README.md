@@ -20,3 +20,5 @@ where xact_start is not null
 ```
 
 Время начала сессии указано, состояние - active, тип сессии - client backend.
+
+![pg_stat_acivity](
